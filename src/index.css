@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ramadan-deep: #0f172a;
+  --color-ramadan-indigo: #1e1b4b;
+  --color-ramadan-gold: #FFD700;
+  --color-ramadan-green: #0f5132;
+  --color-ramadan-emerald: #059669;
+}
+
+body {
+  background-color: #062c1b;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(15, 81, 50, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(5, 150, 105, 0.2) 0%, transparent 50%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.ramadan-hero {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, var(--color-ramadan-green) 0%, #062c1b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .ramadan-hero { height: 400px; }
+}
+
+.css-moon {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 12px 12px 0 0 var(--color-ramadan-gold);
+  transform: rotate(-15deg);
+  z-index: 2;
+}
+
+.lantern-wrapper {
+  position: absolute;
+  top: -20px;
+  animation: float 4s infinite ease-in-out;
+  z-index: 2;
+}
+
+.css-lantern {
+  width: 30px;
+  height: 45px;
+  background: var(--color-ramadan-gold);
+  position: relative;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+.css-lantern::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 10px solid var(--color-ramadan-gold);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(2deg); }
+  50% { transform: translateY(20px) rotate(-2deg); }
+}
+
+.ramadan-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.gold-glow {
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.4);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.star {
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+.star-delayed {
+  animation: twinkle 4s infinite ease-in-out 1s;
+}
+
+.star-fast {
+  animation: twinkle 2s infinite ease-in-out 0.5s;
+}
+
+.islamic-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l2.5 7.5L40 10l-7.5 2.5L30 20l-2.5-7.5L20 10l7.5-2.5L30 0zm0 40l2.5 7.5L40 50l-7.5 2.5L30 60l-2.5-7.5L20 50l7.5-2.5L30 40zM0 30l7.5-2.5L10 20l2.5 7.5L20 30l-7.5 2.5L10 40l-2.5-7.5L0 30zm40 0l7.5-2.5L50 20l2.5 7.5L60 30l-7.5 2.5L50 40l-2.5-7.5L40 30z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
