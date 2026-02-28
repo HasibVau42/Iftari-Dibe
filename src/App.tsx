@@ -546,11 +546,11 @@ export default function App() {
                         </button>
                       )}
                       <div>
-                        <h3 className="font-black text-sm md:text-xl text-white mb-2 md:mb-3 pr-6 md:pr-10 tracking-tight line-clamp-1 md:line-clamp-none">{event.mosque_name}</h3>
+                        <h3 className="font-black text-sm md:text-xl text-white mb-2 md:mb-3 pr-6 md:pr-10 tracking-tight">{event.mosque_name}</h3>
                         <div className="space-y-1.5 md:space-y-3 text-[10px] md:text-sm text-white/70 mb-3 md:mb-6">
                           <div className="flex items-center space-x-1.5 md:space-x-3">
                             <Map size={12} className="text-ramadan-gold/60 md:w-[18px] md:h-[18px]" />
-                            <span className="font-medium truncate">{event.location}</span>
+                            <span className="font-medium">{event.location}</span>
                           </div>
                           {event.date && (
                             <div className="flex items-center space-x-1.5 md:space-x-3">
@@ -569,7 +569,7 @@ export default function App() {
                           {event.description && (
                             <div className="mt-2 md:mt-4 p-1.5 md:p-3 bg-white/5 rounded-lg md:rounded-xl border border-white/5 text-[9px] md:text-xs italic text-white/50 flex items-start space-x-1.5 md:space-x-3 leading-tight md:leading-relaxed">
                               <MessageSquare size={10} className="mt-0.5 flex-shrink-0 text-ramadan-gold/40 md:w-[14px] md:h-[14px]" />
-                              <span className="line-clamp-2 md:line-clamp-none">{event.description}</span>
+                              <span className="">{event.description}</span>
                             </div>
                           )}
                         </div>
